@@ -1,26 +1,26 @@
 def date():
-    date =input("YYYY-MM-DD: ")
+    date_input =input("YYYY-MM-DD: ")
     try:
         with open("expense.txt", "a") as file:
-               file.write(date +"\n")
-        user_input = int(date)
-        print(f"you entered an invalid date: {user_input}")
+               file.write(date_input +"\n")
+        print(f"Date entered: {date_input}")
     except ValueError:
         print("Invalid input.Please enter a date")
 def Amount():
-    Amount = input("Enter a number: ")
+    amount_input = input("Enter a number: ")
     try:
+       user_input = int(amount_input)
        with open("expense.txt", "a") as file:
-          file.write(date + Amount +"\n")
-          user_input = int(Amount)
+          file.write(amount_input +"\n")
           print(f"you entered an integer: {user_input}")
     except ValueError:
          print("Invalid input.Please enter a whole number.")
 def add_expense():
-    expense =input("date","Amount")
+    date_input = input("Enter date (YYYY-MM-DD): ")
+    amount_input = input("Enter amount: ")
     try:
         with open("expense.txt", "a") as file:
-            file.write(date + Amount + "\n")
+            file.write(date_input + " - " + amount_input + "\n")
             print("expense added successfully")
     except Exception:
             print("Error saving expense")    
@@ -37,21 +37,21 @@ def view_expense():
     except FileNotFoundError:
           print("No expense file found yet.")
 def total_expense():
-    expense = input("expense")
+    expense = input("Enter expense amount: ")
      
-    status = input("Enter status (F/T/B): ").lower()
-    if status == "F":
+    status = input("Enter status (F/T/B): ").lower().strip()
+    if status == "f":
                 record = "Food"
-    elif status == "T":
+    elif status == "t":
                 record = "Transport"
-    elif status == "B":
+    elif status == "b":
                 record = "Bills"
     else:
                 print("invalid status")
-    return
+                return
     try:
         with open("expense.txt", "a") as file:
-         file.write(add_expense + "-" + record +"\n")
+         file.write(expense + "-" + record +"\n")
          print("Expense recorded successfully")
     except Exception:
             print("Error recording expense")
@@ -71,13 +71,14 @@ while True:
      elif choice == "2":
          Amount()
      elif choice == "3":
-          add_expense
+          add_expense()
      elif choice =="4":
          view_expense()
      elif choice =="5":
-        total_expense
+        total_expense()
      elif choice =="6":
          print("Goodbye!!!")
+         break
      else:
         print("invalid choice.Try again")
     

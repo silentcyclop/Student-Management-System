@@ -1,2 +1,5 @@
 & "C:/Users/buddiez ent/AppData/Local/Programs/Python/Python314/python.exe" "c:/Users/buddiez ent/desktop/Student_Management_System/trackingexpenditure.py"
 
+2025-02-03
+500
+2026-02-03 - 500
