@@ -1,0 +1,2 @@
+& "C:/Users/buddiez ent/AppData/Local/Programs/Python/Python314/python.exe" "c:/Users/buddiez ent/desktop/Student_Management_System/trackingexpenditure.py"
+
